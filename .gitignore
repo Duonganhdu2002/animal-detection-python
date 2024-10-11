@@ -33,14 +33,6 @@ wheels/
 *.sql
 *.sqlite
 
-# Ignore data directory and model files
-data/
-saved_model/
-
-# Ignore HTML and CSS generated results (optional)
-*.html
-*.css
-
 # Unit test / coverage reports
 .coverage
 .tox/
@@ -54,6 +46,3 @@ coverage.xml
 *.env
 *.ini
 
-# Others
-README.md
-requirements.txt
