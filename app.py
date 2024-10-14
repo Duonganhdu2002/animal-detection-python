@@ -49,8 +49,8 @@ def upload_image():
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(filepath)
         # Xử lý ảnh
-        result_image = process_image(filepath)
-        return render_template('results.html', result_image=result_image)
+        result_image, class_name, confidence = process_image(filepath)
+        return render_template('results.html', result_image=result_image, class_name=class_name, confidence=confidence)
     return redirect('/')
 
 def process_image(image_path):
@@ -66,14 +66,12 @@ def process_image(image_path):
     class_idx = np.argmax(predictions[0])
     confidence = np.max(predictions[0])
     class_name = idx_to_class[class_idx]
-    # Vẽ nhãn lên ảnh
-    label = f"{class_name}: {confidence:.2f}"
-    cv2.putText(image, label, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (36,255,12), 2)
+    
     # Lưu ảnh kết quả
     result_filename = os.path.basename(image_path)
     result_path = os.path.join(app.config['RESULT_FOLDER'], result_filename)
     cv2.imwrite(result_path, image)
-    return result_filename
+    return result_filename, class_name, confidence
 
 if __name__ == '__main__':
     app.run(debug=True)
