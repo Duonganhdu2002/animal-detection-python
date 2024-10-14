@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classification Result</title>
+    <style>
+      body {
+        margin: 0;
+        background-image: url("../static/uploads/pexels-photo-1108099.webp");
+        background-position: center;
+        height: 100vh;
+      }
+      .container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .content-box {
+        background-color: rgba(255, 255, 255, 0.5);
+        width: 30%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        border-radius: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+      }
+      h1 {
+        text-align: center;
+        margin: 0;
+      }
+      img {
+        max-width: 100%;
+        border-radius: 15px;
+        margin-top: 20px;
+      }
+      a {
+        margin-top: 20px;
+        text-decoration: none;
+        color: #4caf50;
+        font-weight: bold;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content-box">
+        <h1>Classification Result</h1>
+        <img
+          src="{{ url_for('static', filename='results/' + result_image) }}"
+          alt="Result Image"
+        />
+        <br />
+        <a href="/">Upload another image</a>
+      </div>
+    </div>
+  </body>
+</html>

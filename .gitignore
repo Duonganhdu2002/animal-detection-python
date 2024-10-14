@@ -37,9 +37,6 @@ wheels/
 data/
 saved_model/
 
-# Ignore HTML and CSS generated results (optional)
-*.html
-*.css
 
 # Unit test / coverage reports
 .coverage

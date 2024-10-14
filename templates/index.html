@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animal Classification</title>
+    <style>
+      body {
+        margin: 0;
+        background-image: url("../static/uploads/pexels-photo-1108099.webp");
+        background-position: center;
+        height: 100vh;
+      }
+      .container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .content-box {
+        background-color: rgba(255, 255, 255, 0.5);
+        width: 30%;
+        height: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+        border-radius: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+        margin: 0;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content-box">
+        <div>
+          <h1>Upload an Image</h1>
+        </div>
+
+        <div>
+          <form
+            id="uploadForm"
+            action="/upload_image"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <input type="file" name="file" accept="image/*" required />
+            <button type="submit">Upload</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
